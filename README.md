@@ -1,14 +1,15 @@
 # Linux Server Toolkit
 
-A collection of Bash scripts for Linux system inspection and basic administration.
+A Bash-based toolkit for Linux system inspection and basic health checks.
 
-## Current Features
+## Features
 
-- Operating system identification
-- Kernel version reporting
-- Hostname and uptime information
-- Memory usage reporting
-- Root filesystem disk usage
+- Displays operating system and kernel information
+- Reports hostname and system uptime
+- Shows memory usage
+- Reports root filesystem disk usage
+- Warns when disk usage reaches 80%
+- Includes automated tests for disk usage checks
 
 ## Requirements
 
@@ -18,16 +19,23 @@ A collection of Bash scripts for Linux system inspection and basic administratio
 
 ## Usage
 
-Make the script executable:
-
-```bash
-chmod +x system-info.sh
-```
-
-Run the script:
+Run the system information script:
 
 ```bash
 ./system-info.sh
+```
+
+Run automated tests:
+
+```bash
+bash test-system-info.sh
+```
+
+Check Bash syntax:
+
+```bash
+bash -n system-info.sh
+bash -n test-system-info.sh
 ```
 
 ## Project Status
@@ -36,8 +44,8 @@ Learning project in active development.
 
 ## Planned Improvements
 
-- Add system health checks
-- Add disk space warning thresholds
+- Add input validation
 - Improve error handling
-- Add automated tests
-- Document supported environments
+- Add more system health checks
+- Expand automated test coverage
+- Add CI checks with GitHub Actions
