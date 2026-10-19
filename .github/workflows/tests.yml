@@ -1,0 +1,24 @@
+name: Bash Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Bash syntax
+        run: |
+          bash -n system-info.sh
+          bash -n test-system-info.sh
+
+      - name: Run automated tests
+        run: bash test-system-info.sh
